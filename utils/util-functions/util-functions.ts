@@ -5,9 +5,12 @@ import {
   subDays,
 } from "date-fns";
 import { orderStatus } from "../constants/constants";
+import { OrderItem } from "@/components/pages/home-page/types";
 
 // To format the order time in a specific format
 export const formatOrderTime = (dateString: string) => {
+  if (dateString === "") return "-";
+
   const date = new Date(dateString);
   const now = new Date();
 
@@ -36,4 +39,9 @@ export const orderStatusClass = (status: string) => {
     case orderStatus.inTransist:
       return "bg-yellow-500 text-white";
   }
+};
+
+// To get the total price of the order
+export const getTotalPrice = (items: OrderItem[]) => {
+  return items.reduce((acc, item) => acc + item.Total_Price, 0).toFixed(2);
 };

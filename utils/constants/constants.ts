@@ -17,3 +17,8 @@ export const orderFilters = [
   { label: "Delivered", value: orderStatus.delivered },
   { label: "In Transit", value: orderStatus.inTransist },
 ];
+
+export const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Insights", href: "/insights" },
+];

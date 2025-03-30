@@ -10,6 +10,7 @@ import { OrderDetailsModal } from "@/components/modals/order-details";
 import { Pagination } from "@/components/pagination";
 import { usePagination } from "@/components/hooks/usePagination";
 import data from "@/components/data/data.json";
+import { ScrollText } from "lucide-react";
 
 const HomePage = () => {
   const [filterValue, setFilterValue] = useState<string>(orderFilters[0].value);
@@ -52,8 +53,8 @@ const HomePage = () => {
       )}
 
       <div className="w-full flex justify-between items-center">
-        <h1 className="font-semibold text-lg">
-          Orders ({filteredOrders.length})
+        <h1 className="font-semibold text-lg flex flex-row items-center gap-2">
+          Orders ({filteredOrders.length}) <ScrollText size={20} />
         </h1>
         <Filter
           value={filterValue}
