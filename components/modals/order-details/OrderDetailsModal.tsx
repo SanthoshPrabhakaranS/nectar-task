@@ -10,6 +10,7 @@ import {
 } from "@/utils/util-functions/util-functions";
 import React, { FC, useEffect, useRef } from "react";
 import OrderItem from "./OrderItems";
+import OrderItems from "./OrderItems";
 
 interface OrderDetailsModalProps {
   order: Order | null;
@@ -95,7 +96,7 @@ const OrderDetailsModal: FC<OrderDetailsModalProps> = ({
             </SplitBetweenElement>
 
             <div className="flex flex-col gap-1 font-semibol mb-2">
-              <OrderItem orderItems={order.Items} />
+              <OrderItems orderItems={order.Items} />
 
               <SplitBetweenElement>
                 Ordered Time
